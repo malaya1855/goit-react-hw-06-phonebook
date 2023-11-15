@@ -1,14 +1,15 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { InputFilter } from 'components';
-import { useDispatch } from 'react-redux';
-import { newFilter } from 'redux/slice/filterSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { newFilterName } from 'redux/slice/filterSlice';
 
 export const Filter = () => {
-  // const filterNane = useSelector(state => state.filter);
+  const filterName = useSelector(state => state.filter);
   const dispatch = useDispatch();
 
   const onChangeFilter = ev => {
-    dispatch(newFilter(ev.currentTarget.value));
+    const filterValue = ev.currentTarget.value;
+    dispatch(newFilterName(filterValue));
   };
 
   return (
@@ -17,13 +18,9 @@ export const Filter = () => {
       <InputFilter
         type="text"
         name="name"
-        // value={filter}
+        value={filterName}
         onChange={onChangeFilter}
       />
     </label>
   );
-};
-
-Filter.propTypes = {
-  filter: PropTypes.string.isRequired,
 };

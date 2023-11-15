@@ -1,18 +1,18 @@
 import { ContactList, Filter, ContactForm } from 'components';
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 const App = () => {
   const allContacts = useSelector(state => state.contacts);
 
-  const [contacts, setContacts] = useState(
-    () => JSON.parse(window.localStorage.getItem('contacts')) ?? []
-  );
-  const [filter, setFilter] = useState('');
+  // const [contacts, setContacts] = useState(
+  //   () => JSON.parse(window.localStorage.getItem('contacts')) ?? []
+  // );
+  // const [filter, setFilter] = useState('');
 
-  useEffect(() => {
-    window.localStorage.setItem('contacts', JSON.stringify(contacts));
-  }, [contacts]);
+  // useEffect(() => {
+  //   window.localStorage.setItem('contacts', JSON.stringify(contacts));
+  // }, [contacts]);
 
   // const onFilteredContacts = () => {
   //   const normalizedFilter = filter.toLowerCase();
@@ -31,7 +31,7 @@ const App = () => {
         <p>No saved contacts</p>
       ) : (
         <div>
-          <Filter filter={filter} />
+          <Filter />
           <ContactList />
         </div>
       )}
