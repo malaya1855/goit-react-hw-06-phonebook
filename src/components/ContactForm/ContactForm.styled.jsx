@@ -9,6 +9,8 @@ export const Input = styled.input`
   width: 100%;
   height: 30px;
   border: 0;
+  padding-left: 10px;
+
   box-shadow: 0 4px 11px 0 rgb(37 44 97 / 15%),
     0 1px 3px 0 rgb(93 100 148 / 20%);
   transition: all 0.2s ease-out;
@@ -22,7 +24,6 @@ export const Input = styled.input`
   }
   ::placeholder {
     color: rgb(72, 76, 122);
-    padding-left: 10px;
   }
 `;
 export const ButtonForm = styled.button`
