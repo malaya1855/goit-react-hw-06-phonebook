@@ -1,7 +1,10 @@
 import { ContactList, Filter, ContactForm } from 'components';
 import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 const App = () => {
+  const allContacts = useSelector(state => state.contacts);
+
   const [contacts, setContacts] = useState(
     () => JSON.parse(window.localStorage.getItem('contacts')) ?? []
   );
@@ -11,44 +14,27 @@ const App = () => {
     window.localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
 
-  const onHandleSubmit = newContact => {
-    const existedContact = contacts.find(
-      contact => contact.name.toLowerCase() === newContact.name.toLowerCase()
-    );
-    if (existedContact) {
-      alert(`${newContact.name} is already in your contacts`);
-    } else {
-      setContacts(prevContacts => [...prevContacts, newContact]);
-    }
-  };
-  const onChangeFilter = ev => {
-    setFilter(ev.currentTarget.value);
-  };
-
-  const onFilteredContacts = () => {
-    const normalizedFilter = filter.toLowerCase();
-    const filteredContacts = contacts.filter(contact =>
-      contact.name.toLowerCase().includes(normalizedFilter)
-    );
-    return filteredContacts;
-  };
-
-  const onDeleteBtn = id => {
-    return setContacts(prevContacts =>
-      prevContacts.filter(contact => contact.id !== id)
-    );
-  };
+  // const onFilteredContacts = () => {
+  //   const normalizedFilter = filter.toLowerCase();
+  //   const filteredContacts = contacts.filter(contact =>
+  //     contact.name.toLowerCase().includes(normalizedFilter)
+  //   );
+  //   return filteredContacts;
+  // };
 
   return (
     <div>
       <h1>Phonebook</h1>
-      <ContactForm handleSubmit={onHandleSubmit} />
+      <ContactForm />
       <h2>Contacts</h2>
-      <Filter filter={filter} changeFilter={onChangeFilter} />
-      <ContactList
-        contacts={onFilteredContacts()}
-        deleteContacts={onDeleteBtn}
-      />
+      {allContacts.length === 0 ? (
+        <p>No saved contacts</p>
+      ) : (
+        <div>
+          <Filter filter={filter} />
+          <ContactList />
+        </div>
+      )}
     </div>
   );
 };
