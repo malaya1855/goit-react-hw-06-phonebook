@@ -28,7 +28,6 @@ export const ContactForm = () => {
   return (
     <Form onSubmit={onSubmitForm}>
       <label htmlFor="name">
-        {/* Name */}
         <Input
           type="text"
           name="name"
@@ -39,7 +38,6 @@ export const ContactForm = () => {
         />
       </label>
       <label htmlFor="number">
-        {/* Number */}
         <Input
           type="tel"
           name="number"

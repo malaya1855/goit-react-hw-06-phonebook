@@ -19,3 +19,8 @@ export const Title = styled.h1`
   text-align: center;
   margin: 0;
 `;
+
+export const ItemForm = styled.div`
+  width: 265px;
+  text-align: center;
+`;

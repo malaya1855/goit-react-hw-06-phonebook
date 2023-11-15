@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 
 export const InputFilter = styled.input`
-  margin-left: auto;
   width: 100%;
   height: 30px;
   border: 0;
@@ -17,7 +16,7 @@ export const InputFilter = styled.input`
     outline: none;
   }
   ::placeholder {
-    color: gb(72, 76, 122);
-    margin-left: 50px;
+    color: rgb(72, 76, 122);
+    padding-left: 10px;
   }
 `;

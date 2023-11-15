@@ -3,10 +3,9 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  align-items: start;
+  align-items: stretch;
 `;
 export const Input = styled.input`
-  margin-left: auto;
   width: 100%;
   height: 30px;
   border: 0;
@@ -22,8 +21,8 @@ export const Input = styled.input`
     outline: none;
   }
   ::placeholder {
-    color: gb(72, 76, 122);
-    margin-left: 50px;
+    color: rgb(72, 76, 122);
+    padding-left: 10px;
   }
 `;
 export const ButtonForm = styled.button`

@@ -5,6 +5,7 @@ import {
   InfoTable,
   PhoneBookForm,
   Title,
+  ItemForm,
 } from 'components';
 import { useSelector } from 'react-redux';
 
@@ -15,11 +16,11 @@ const App = () => {
     <PhoneBookForm>
       <Title>My Phonebook</Title>
       <InfoTable>
-        <div>
+        <ItemForm>
           <h2>Add new contact</h2>
           <ContactForm />
-        </div>
-        <div>
+        </ItemForm>
+        <ItemForm>
           <h2>My contacts</h2>
           {allContacts.length === 0 ? (
             <p>No saved contacts</p>
@@ -29,7 +30,7 @@ const App = () => {
               <ContactList />
             </div>
           )}
-        </div>
+        </ItemForm>
       </InfoTable>
     </PhoneBookForm>
   );
