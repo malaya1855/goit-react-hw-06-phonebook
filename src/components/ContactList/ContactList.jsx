@@ -14,7 +14,9 @@ export const ContactList = () => {
     contact.name.toLowerCase().includes(normalizedFilter)
   );
 
-  return (
+  return filteredContacts.length === 0 ? (
+    <p>No matched contacts in your phone book</p>
+  ) : (
     <ul>
       {filteredContacts.map(contact => {
         const nameArray = contact.name.split(' ');

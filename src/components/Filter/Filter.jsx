@@ -14,10 +14,10 @@ export const Filter = () => {
 
   return (
     <label htmlFor="name">
-      Find contacts by name
       <InputFilter
         type="text"
         name="name"
+        placeholder="Find contacts by name"
         value={filterName}
         onChange={onChangeFilter}
       />
