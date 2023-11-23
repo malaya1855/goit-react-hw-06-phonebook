@@ -1,10 +1,12 @@
 import styled from '@emotion/styled';
 
 export const InputFilter = styled.input`
-  width: 100%;
-  height: 30px;
+  box-sizing: border-box;
+  width: 200px;
   border: 0;
   padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 
   box-shadow: 0 4px 11px 0 rgb(37 44 97 / 15%),
     0 1px 3px 0 rgb(93 100 148 / 20%);

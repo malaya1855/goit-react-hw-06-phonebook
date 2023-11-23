@@ -25,9 +25,10 @@ export const ContactList = () => {
           .join(' ');
         return (
           <List key={contact.id}>
-            <p>
-              {nameFirstUpperLetter}: {contact.number}
-            </p>
+            <p>{nameFirstUpperLetter}</p>
+            <p>{contact.number}</p>
+            <a href={`mailto:${contact.email}`}>{contact.email}</a>
+
             <ButtonDelete
               type="ButtonDelete"
               id={contact.id}

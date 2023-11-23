@@ -21,6 +21,6 @@ export const Title = styled.h1`
 `;
 
 export const ItemForm = styled.div`
-  width: 265px;
+  // width: 265px;
   text-align: center;
 `;
